@@ -45,4 +45,5 @@
     width: 100%;
     text-align: center;
     transition: top 0.5s;
+    margin-top: -5px;
 }
