@@ -45,5 +45,7 @@
     width: 100%;
     text-align: center;
     transition: transform 0.5s;
+    transition: -moz-transform 0.5s;
+    transition: -webkit-transform 0.5s;
     margin-top: -5px;
 }

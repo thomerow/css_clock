@@ -21,6 +21,13 @@
         hours1: null
     };
 
+    function setVendor(element, property, value) {
+        element.style["webkit" + property] = value;
+        element.style["moz" + property] = value;
+        element.style["ms" + property] = value;
+        element.style["o" + property] = value;
+    }
+
     function handleTimer() {
         var now = new Date();
 
@@ -29,22 +36,22 @@
         var seconds = now.getSeconds();
 
         if (seconds != _timePrev.seconds) {
-            _elems.seconds0.style.transform = "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)";
-            _elems.seconds1.style.transform = "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)";
+            setVendor(_elems.seconds0, "Transform", "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)");
+            setVendor(_elems.seconds1, "Transform", "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)");
 
             _timePrev.seconds = seconds;
         }
 
         if (minutes != _timePrev.minutes) {
-            _elems.minutes0.style.transform = "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)";
-            _elems.minutes1.style.transform = "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)";
+            setVendor(_elems.minutes0, "Transform", "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)");
+            setVendor(_elems.minutes1, "Transform", "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)");
 
             _timePrev.minutes = minutes;
         }
 
         if (hours != _timePrev.hours) {
-            _elems.hours0.style.transform = "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)";
-            _elems.hours1.style.transform = "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)";
+            setVendor(_elems.hours0, "Transform", "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)");
+            setVendor(_elems.hours1, "Transform", "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)");
 
             _timePrev.hours = hours;
         }
