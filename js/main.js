@@ -29,22 +29,22 @@
         var seconds = now.getSeconds();
 
         if (seconds != _timePrev.seconds) {
-            _elems.seconds0.style.top = -((_heights.seconds0 / 10) * (seconds % 10)) + "px";
-            _elems.seconds1.style.top = -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px";
+            _elems.seconds0.style.transform = "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)";
+            _elems.seconds1.style.transform = "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)";
 
             _timePrev.seconds = seconds;
         }
 
         if (minutes != _timePrev.minutes) {
-            _elems.minutes0.style.top = -((_heights.minutes0 / 10) * (minutes % 10)) + "px";
-            _elems.minutes1.style.top = -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px";
+            _elems.minutes0.style.transform = "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)";
+            _elems.minutes1.style.transform = "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)";
 
             _timePrev.minutes = minutes;
         }
 
         if (hours != _timePrev.hours) {
-            _elems.hours0.style.top = -((_heights.hours0 / 10) * (hours % 10)) + "px";
-            _elems.hours1.style.top = -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px";
+            _elems.hours0.style.transform = "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)";
+            _elems.hours1.style.transform = "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)";
 
             _timePrev.hours = hours;
         }
