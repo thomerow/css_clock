@@ -26,6 +26,10 @@
     background: linear-gradient(0deg, gray, white, white, white, gray);
 }
 
+.specular {
+    background: linear-gradient(0deg, transparent, transparent, rgba(255, 255, 255, 0.3), transparent, transparent);
+}
+
 .colon {
     position: absolute;
     font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;

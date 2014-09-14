@@ -54,7 +54,7 @@
 
     function loaded() {
         init();
-        setInterval(handleTimer, 100);
+        setInterval(handleTimer, 200);
     }
 
     document.addEventListener("DOMContentLoaded", loaded)
