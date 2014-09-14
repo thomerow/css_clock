@@ -1,7 +1,44 @@
 ﻿body {
-	background: black;
+	background: white;
 }
 
 #clock {
-	color: white;
+    left: 50%;
+    top: 50%;
+	width: 970px;
+    height: 240px;
+    margin-top: -120px;
+    margin-left: -485px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 170pt;
+    font-weight: bold;
+	position: absolute;
+    overflow: hidden;
+}
+
+.hole {
+    position: absolute;
+    width: 140px;
+    height: 240px;
+    box-shadow: inset 0px 6px 16px 0px rgba(0,0,0,0.4);
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(0deg, gray, white, white, white, gray);
+}
+
+.colon {
+    position: absolute;
+    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-size: 150pt;
+    margin-top: -10px;
+    margin-left: -8px;
+    text-align: center;
+    width: 50px; 
+}
+
+.number_band {
+	position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: top 0.5s;
 }

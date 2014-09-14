@@ -1,17 +1,62 @@
 ﻿<!doctype html>
 <html>
-	<head>
-		<title>CSS Clock</title>
-		<link rel="stylesheet" href="css/main.css">
-	</head>
-	<body>
-		<div id="clock">
-			<div id="seconds_1">
-				0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
-			</div>
-			<div id="seconds_0">
-				0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>
-			</div>
-		</div>
-	</body>
+<head>
+   <meta charset="utf-8" />
+   <title>CSS Clock</title>
+   <link rel="stylesheet" href="css/main.css">
+   <script src="js/main.js"></script>
+</head>
+<body>
+   <div id="clock">
+      <div class="hole"
+           id="hole_hours_1">
+         <div id="hours_1" class="number_band">
+            0<br />1<br />2
+         </div>
+      </div>
+      <div class="hole"
+           id="hole_hours_0"
+           style="left: 150px">
+         <div id="hours_0" class="number_band">
+            0<br />1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9
+         </div>
+      </div>
+      <div class="colon"
+           style="left: 290px">
+         :
+      </div>
+      <div class="hole"
+           id="hole_minutes_1"
+           style="left: 340px">
+         <div id="minutes_1" class="number_band">
+            0<br />1<br />2<br />3<br />4<br />5
+         </div>
+      </div>
+      <div class="hole"
+           id="hole_minutes_0"
+           style="left: 490px">
+         <div id="minutes_0" class="number_band">
+            0<br />1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9
+         </div>
+      </div>
+      <div class="colon"
+           style="left: 630px">
+         :
+      </div>
+      <div class="hole"
+           id="hole_seconds_1"
+           style="left: 680px">
+         <div id="seconds_1" class="number_band">
+            0<br />1<br />2<br />3<br />4<br />5
+         </div>
+      </div>
+      <div class="hole"
+           id="hole_seconds_0"
+           style="left: 830px">
+         <div id="seconds_0" class="number_band">
+            0<br />1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9
+         </div>
+      </div>
+   </div>
+</body>
 </html>
