@@ -21,6 +21,8 @@
         hours1: null
     };
 
+    var _fontLoadCheckIntervalID;
+
     function setVendor(element, property, value) {
         element.style["webkit" + property] = value;
         element.style["moz" + property] = value;
@@ -28,7 +30,7 @@
         element.style["o" + property] = value;
     }
 
-    function handleTimer() {
+    function clockTimerHandler() {
         var now = new Date();
 
         var hours = now.getHours();
@@ -57,14 +59,15 @@
         }
     }
 
-    function getNumberBandHeights() {
-        _elems.seconds0 = document.getElementById("seconds_0");
-        _elems.seconds1 = document.getElementById("seconds_1");
-        _elems.minutes0 = document.getElementById("minutes_0");
-        _elems.minutes1 = document.getElementById("minutes_1");
-        _elems.hours0 = document.getElementById("hours_0");
-        _elems.hours1 = document.getElementById("hours_1");
+    function webFontLoadCheckTimerHandler() {
+        if (_elems.seconds0.clientHeight != _heights.seconds0) {
+            clearInterval(_fontLoadCheckIntervalID);
+            getNumberBandHeights();
+            setInterval(clockTimerHandler, 100);  // 10 Hz
+        }
+    }
 
+    function getNumberBandHeights() {
         _heights.seconds0 = _elems.seconds0.clientHeight;
         _heights.seconds1 = _elems.seconds1.clientHeight;
         _heights.minutes0 = _elems.minutes0.clientHeight;
@@ -74,13 +77,20 @@
     }
 
     function init() {
+        _elems.seconds0 = document.getElementById("seconds_0");
+        _elems.seconds1 = document.getElementById("seconds_1");
+        _elems.minutes0 = document.getElementById("minutes_0");
+        _elems.minutes1 = document.getElementById("minutes_1");
+        _elems.hours0 = document.getElementById("hours_0");
+        _elems.hours1 = document.getElementById("hours_1");
+
         getNumberBandHeights();
     }
 
-    function loaded() {
+    function windowLoaded() {
         init();
-        setInterval(handleTimer, 100);  // 10 Hz
+        _fontLoadCheckIntervalID = setInterval(webFontLoadCheckTimerHandler, 200);
     }
 
-    document.addEventListener("DOMContentLoaded", loaded)
+    window.addEventListener("load", windowLoaded)
 }());

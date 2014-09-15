@@ -9,7 +9,8 @@
     height: 240px;
     margin-top: -120px;
     margin-left: -485px;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    font-family: 'Roboto', sans-serif;
 	font-size: 170pt;
     font-weight: bold;
 	position: absolute;
@@ -32,10 +33,11 @@
 
 .colon {
     position: absolute;
-    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    /*font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;*/
+    font-family: 'Open Sans', sans-serif;
     font-size: 150pt;
-    margin-top: -10px;
-    margin-left: -8px;
+    margin-top: -33px;
+    margin-left: -3px;
     text-align: center;
     width: 50px; 
 }
@@ -47,5 +49,5 @@
     transition: transform 0.5s;
     transition: -moz-transform 0.5s;
     transition: -webkit-transform 0.5s;
-    margin-top: -5px;
+    margin-top: -35px;
 }
