@@ -21,7 +21,7 @@
     position: absolute;
     width: 140px;
     height: 240px;
-    box-shadow: inset 0px 6px 16px 0px rgba(0,0,0,0.4);
+    box-shadow: inset 0px 6px 16px 0px rgba(0,0,0,0.6);
     border-radius: 16px;
     overflow: hidden;
     background: linear-gradient(0deg, gray, white, white, white, gray);
@@ -29,6 +29,7 @@
 
 .specular {
     background: linear-gradient(0deg, transparent, transparent, rgba(255, 255, 255, 0.3), transparent, transparent);
+    box-shadow: none;
 }
 
 .colon {
