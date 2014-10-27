@@ -5,15 +5,15 @@
 #clock {
     left: 50%;
     top: 50%;
-	width: 970px;
+    width: 970px;
     height: 240px;
     margin-top: -120px;
     margin-left: -485px;
-	/*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     font-family: 'Roboto', sans-serif;
-	font-size: 170pt;
+    font-size: 170pt;
     font-weight: bold;
-	position: absolute;
+    position: absolute;
     overflow: hidden;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .number_band {
-	position: absolute;
+    position: absolute;
     width: 100%;
     text-align: center;
     transition: transform 0.5s;
