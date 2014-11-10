@@ -1,2 +1,4 @@
-css_clock
-=========
+CSS based clock
+===============
+
+A fancy clock using css transforms and javascript.
