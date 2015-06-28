@@ -63,7 +63,7 @@
         if (_elems.seconds0.clientHeight != _heights.seconds0) {
             clearInterval(_fontLoadCheckIntervalID);
             getNumberBandHeights();
-            setInterval(clockTimerHandler, 100);  // 10 Hz
+            _timePrev.hours = _timePrev.minutes = _timePrev.seconds = 0;
         }
     }
 
@@ -90,6 +90,7 @@
     function windowLoaded() {
         init();
         _fontLoadCheckIntervalID = setInterval(webFontLoadCheckTimerHandler, 200);
+        setInterval(clockTimerHandler, 100);  // 10 Hz
     }
 
     window.addEventListener("load", windowLoaded)
