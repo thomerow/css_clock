@@ -22,15 +22,12 @@
     };
 
     var _fontLoadCheckIntervalID;
-    var _fontLoadCheckRetries = 5;
 
     function setVendor(element, property, value) {
-        var capProp = property.charAt(0).toUpperCase() + property.substring(1);
-        element.style[property] = value;
-        element.style["webkit" + capProp] = value;
-        element.style["Moz" + capProp] = value;
-        element.style["ms" + capProp] = value;
-        element.style["o" + capProp] = value;
+        element.style["webkit" + property] = value;
+        element.style["moz" + property] = value;
+        element.style["ms" + property] = value;
+        element.style["o" + property] = value;
     }
 
     function clockTimerHandler() {
@@ -41,36 +38,32 @@
         var seconds = now.getSeconds();
 
         if (seconds != _timePrev.seconds) {
-            setVendor(_elems.seconds0, "transform", "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)");
-            setVendor(_elems.seconds1, "transform", "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)");
+            setVendor(_elems.seconds0, "Transform", "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)");
+            setVendor(_elems.seconds1, "Transform", "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)");
 
             _timePrev.seconds = seconds;
         }
 
         if (minutes != _timePrev.minutes) {
-            setVendor(_elems.minutes0, "transform", "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)");
-            setVendor(_elems.minutes1, "transform", "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)");
+            setVendor(_elems.minutes0, "Transform", "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)");
+            setVendor(_elems.minutes1, "Transform", "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)");
 
             _timePrev.minutes = minutes;
         }
 
         if (hours != _timePrev.hours) {
-            setVendor(_elems.hours0, "transform", "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)");
-            setVendor(_elems.hours1, "transform", "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)");
+            setVendor(_elems.hours0, "Transform", "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)");
+            setVendor(_elems.hours1, "Transform", "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)");
 
             _timePrev.hours = hours;
         }
     }
 
-    function startClock() {
-        clearInterval(_fontLoadCheckIntervalID);
-        getNumberBandHeights();
-        setInterval(clockTimerHandler, 100);  // 10 Hz    
-    }
-
     function webFontLoadCheckTimerHandler() {
-        if ((_elems.seconds0.clientHeight != _heights.seconds0) || (_fontLoadCheckRetries-- == 0)) {
-            startClock();
+        if (_elems.seconds0.clientHeight != _heights.seconds0) {
+            clearInterval(_fontLoadCheckIntervalID);
+            getNumberBandHeights();
+            setInterval(clockTimerHandler, 100);  // 10 Hz
         }
     }
 
