@@ -42,15 +42,23 @@
         }
 
         if (minutes != _timePrev.minutes) {
-            setVendor(_elems.minutes0, "Transform", "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)");
-            setVendor(_elems.minutes1, "Transform", "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)");
+            var strTranslate0 = "translate(0px, " + -((_heights.minutes0 / 10) * (minutes % 10)) + "px)";
+            var strTranslate1 = "translate(0px, " + -((_heights.minutes1 / 6) * Math.floor(minutes / 10)) + "px)";
+            _elems.minutes0.style.webkitTransform = 
+            _elems.minutes0.style.transform = strTranslate0;
+            _elems.minutes1.style.webkitTransform = 
+            _elems.minutes1.style.transform = strTranslate1;
 
             _timePrev.minutes = minutes;
         }
 
         if (hours != _timePrev.hours) {
-            setVendor(_elems.hours0, "Transform", "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)");
-            setVendor(_elems.hours1, "Transform", "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)");
+            var strTranslate0 = "translate(0px, " + -((_heights.hours0 / 10) * (hours % 10)) + "px)";
+            var strTranslate1 = "translate(0px, " + -((_heights.hours1 / 3) * Math.floor(hours / 10)) + "px)";
+            _elems.hours0.style.webkitTransform = 
+            _elems.hours0.style.transform = strTranslate0;
+            _elems.hours1.style.webkitTransform = 
+            _elems.hours1.style.transform = strTranslate1;
 
             _timePrev.hours = hours;
         }
