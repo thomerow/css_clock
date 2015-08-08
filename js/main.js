@@ -23,13 +23,6 @@
 
     var _fontLoadCheckIntervalID;
 
-    function setVendor(element, property, value) {
-        element.style["webkit" + property] = value;
-        element.style["moz" + property] = value;
-        element.style["ms" + property] = value;
-        element.style["o" + property] = value;
-    }
-
     function clockTimerHandler() {
         var now = new Date();
 
@@ -38,8 +31,12 @@
         var seconds = now.getSeconds();
 
         if (seconds != _timePrev.seconds) {
-            setVendor(_elems.seconds0, "Transform", "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)");
-            setVendor(_elems.seconds1, "Transform", "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)");
+            var strTranslate0 = "translate(0px, " + -((_heights.seconds0 / 10) * (seconds % 10)) + "px)";
+            var strTranslate1 = "translate(0px, " + -((_heights.seconds1 / 6) * Math.floor(seconds / 10)) + "px)";
+            _elems.seconds0.style.webkitTransform = 
+            _elems.seconds0.style.transform = strTranslate0;
+            _elems.seconds1.style.webkitTransform = 
+            _elems.seconds1.style.transform = strTranslate1;
 
             _timePrev.seconds = seconds;
         }
